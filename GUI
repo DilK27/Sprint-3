@@ -5,9 +5,7 @@ import javafx.stage.Stage;
 import javafx.scene.Group;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
-
-
-
+import javafx.scene.control.Label;
 
 public class GUI extends Application{
 
@@ -22,6 +20,32 @@ public class GUI extends Application{
     Button function;
     Button swap;
     Button printer;
+
+    Button b1 = new Button("   ");
+    Button b2 = new Button("   ");
+    Button b3 = new Button("   ");
+    Button b4 = new Button("   ");
+    Button b5 = new Button("   ");
+    Button b6 = new Button("   ");
+    Button b7 = new Button("   ");
+    Button b8 = new Button("   ");
+
+
+    Label title = new Label("Chronotimer TEAM EZ");
+
+    Label one = new Label("1");
+    Label two = new Label("2");
+    Label three = new Label("3");
+    Label four = new Label("4");
+    Label five = new Label("5");
+    Label six = new Label("6");
+    Label seven = new Label("7");
+    Label eight = new Label("8");
+
+    Label start = new Label("Start");
+    Label enable1 = new Label("Enable/Disable");
+    Label finish = new Label("Finish");
+    Label enable2 = new Label("Enable/Disable");
 
     public static void main(String[] args){
 
@@ -54,6 +78,55 @@ public class GUI extends Application{
         printer.setTranslateX(600);
         printer.setTranslateY(10);
 
+        title.setTranslateX(275);
+        title.setTranslateY(20);
+
+        one.setTranslateX(257);
+        one.setTranslateY(40);
+        three.setTranslateX(307);
+        three.setTranslateY(40);
+        five.setTranslateX(357);
+        five.setTranslateY(40);
+        seven.setTranslateX(407);
+        seven.setTranslateY(40);
+
+        b1.setTranslateX(250);
+        b1.setTranslateY(60);
+        b3.setTranslateX(300);
+        b3.setTranslateY(60);
+        b5.setTranslateX(350);
+        b5.setTranslateY(60);
+        b7.setTranslateX(400);
+        b7.setTranslateY(60);
+
+        two.setTranslateX(257);
+        two.setTranslateY(140);
+        four.setTranslateX(307);
+        four.setTranslateY(140);
+        six.setTranslateX(357);
+        six.setTranslateY(140);
+        eight.setTranslateX(407);
+        eight.setTranslateY(140);
+
+        b2.setTranslateX(250);
+        b2.setTranslateY(160);
+        b4.setTranslateX(300);
+        b4.setTranslateY(160);
+        b6.setTranslateX(350);
+        b6.setTranslateY(160);
+        b8.setTranslateX(400);
+        b8.setTranslateY(160);
+
+        start.setTranslateX(200);
+        start.setTranslateY(60);
+        enable1.setTranslateX(150);
+        enable1.setTranslateY(100);
+        finish.setTranslateX(200);
+        finish.setTranslateY(160);
+        enable2.setTranslateX(150);
+        enable2.setTranslateY(200);
+
+
         Group off = new Group();
         Group on = new Group();
         Rectangle rect = new Rectangle(700, 500, Color.BLACK);
@@ -61,23 +134,44 @@ public class GUI extends Application{
         off.getChildren().add(power1);
 
 
-        Rectangle rekt = new Rectangle(700, 500, Color.SEASHELL );
+        Rectangle rekt = new Rectangle(700, 500, Color.LAVENDER );
         on.getChildren().add(rekt);
         on.getChildren().add(power2);
         on.getChildren().add(function);
         on.getChildren().add(swap);
         on.getChildren().add(printer);
 
+        on.getChildren().add(title);
+
+        on.getChildren().add(one);
+        on.getChildren().add(two);
+        on.getChildren().add(three);
+        on.getChildren().add(four);
+        on.getChildren().add(five);
+        on.getChildren().add(six);
+        on.getChildren().add(seven);
+        on.getChildren().add(eight);
+
+        on.getChildren().add(start);
+        on.getChildren().add(enable1);
+        on.getChildren().add(finish);
+        on.getChildren().add(enable2);
+
+        on.getChildren().add(b1);
+        on.getChildren().add(b2);
+        on.getChildren().add(b3);
+        on.getChildren().add(b4);
+        on.getChildren().add(b5);
+        on.getChildren().add(b6);
+        on.getChildren().add(b7);
+        on.getChildren().add(b8);
+
+
         //VBox controlGroup = new VBox();
-
-
-
 
         OF = new Scene (off ,700, 500);
         ON = new Scene(on, 700,500);
         window.setScene(OF);
         window .show();
     }
-
-
 }
