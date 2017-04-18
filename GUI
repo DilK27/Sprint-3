@@ -1,0 +1,83 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+import javafx.scene.Group;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.Color;
+
+
+
+
+public class GUI extends Application{
+
+    Stage window;
+
+    Scene OF;
+    Scene ON;
+
+    Button OFF;
+    Button power1 = new Button("Power");
+    Button power2 = new Button("Power");;
+    Button function;
+    Button swap;
+    Button printer;
+
+    public static void main(String[] args){
+
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        window = primaryStage;
+
+        window.setTitle("ChronoTimer");
+
+        power1.setOnAction(e -> window.setScene(ON));
+        power1.setTranslateX(10);
+        power1.setTranslateY(10);
+
+        power2.setOnAction(e -> window.setScene(OF));
+        power2.setTranslateX(10);
+        power2.setTranslateY(10);
+
+        function = new Button("Function");
+        function.setTranslateX(10);
+        function.setTranslateY(250);
+
+        swap = new Button("Swap");
+        swap.setTranslateX(10);
+        swap.setTranslateY(400);
+
+        printer = new Button("Printer");
+        printer.setTranslateX(600);
+        printer.setTranslateY(10);
+
+        Group off = new Group();
+        Group on = new Group();
+        Rectangle rect = new Rectangle(700, 500, Color.BLACK);
+        off.getChildren().add(rect);
+        off.getChildren().add(power1);
+
+
+        Rectangle rekt = new Rectangle(700, 500, Color.SEASHELL );
+        on.getChildren().add(rekt);
+        on.getChildren().add(power2);
+        on.getChildren().add(function);
+        on.getChildren().add(swap);
+        on.getChildren().add(printer);
+
+        //VBox controlGroup = new VBox();
+
+
+
+
+        OF = new Scene (off ,700, 500);
+        ON = new Scene(on, 700,500);
+        window.setScene(OF);
+        window .show();
+    }
+
+
+}
