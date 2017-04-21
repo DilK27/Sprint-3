@@ -6,6 +6,16 @@ import javafx.scene.Group;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
 import javafx.scene.control.Label;
+import javafx.event.EventHandler;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.shape.Box;
+
+
+
+
+
 
 public class GUI extends Application{
 
@@ -30,6 +40,34 @@ public class GUI extends Application{
     Button b7 = new Button("   ");
     Button b8 = new Button("   ");
 
+    Button round1 =  new Button();
+    Button round2 =  new Button();
+    Button round3 =  new Button();
+    Button round4 =  new Button();
+    Button round5 =  new Button();
+    Button round6 =  new Button();
+    Button round7 =  new Button();
+    Button round8 =  new Button();
+
+//    Button left = new Button();
+//    Button right = new Button();
+//    Button up = new Button();
+//    Button down =  new Button();
+//
+
+    Button np0 = new Button("0");
+    Button np1 = new Button("1");
+    Button np2 = new Button("2");
+    Button np3 = new Button("3");
+    Button np4 = new Button("4");
+    Button np5 = new Button("5");
+    Button np6 = new Button("6");
+    Button np7 = new Button("7");
+    Button np8 = new Button("8");
+    Button np9 = new Button("9");
+    Button npstar = new Button("*");
+    Button nphash = new Button("#");
+
 
     Label title = new Label("Chronotimer TEAM EZ");
 
@@ -46,6 +84,14 @@ public class GUI extends Application{
     Label enable1 = new Label("Enable/Disable");
     Label finish = new Label("Finish");
     Label enable2 = new Label("Enable/Disable");
+    Label under = new Label("Queue / Running / Final Time");
+
+    Box print = new Box(150,150,150);
+    Box screen = new Box(250,200,200);
+
+
+
+
 
     public static void main(String[] args){
 
@@ -75,7 +121,7 @@ public class GUI extends Application{
         swap.setTranslateY(400);
 
         printer = new Button("Printer");
-        printer.setTranslateX(600);
+        printer.setTranslateX(570);
         printer.setTranslateY(10);
 
         title.setTranslateX(275);
@@ -126,6 +172,220 @@ public class GUI extends Application{
         enable2.setTranslateX(150);
         enable2.setTranslateY(200);
 
+        under.setTranslateX(210);
+        under.setTranslateY(455);
+
+        round1.setStyle(
+                "-fx-background-radius: 80em; " +
+                        "-fx-min-width: 16px; " +
+                        "-fx-min-height: 16px; " +
+                        "-fx-max-width: 16px; " +
+                        "-fx-max-height: 16px;"
+        );
+
+        round2.setStyle(
+                "-fx-background-radius: 80em; " +
+                        "-fx-min-width: 16px; " +
+                        "-fx-min-height: 16px; " +
+                        "-fx-max-width: 16px; " +
+                        "-fx-max-height: 16px;"
+        );
+
+        round3.setStyle(
+                "-fx-background-radius: 80em; " +
+                        "-fx-min-width: 16px; " +
+                        "-fx-min-height: 16px; " +
+                        "-fx-max-width: 16px; " +
+                        "-fx-max-height: 16px;"
+        );
+
+        round4.setStyle(
+                "-fx-background-radius: 80em; " +
+                        "-fx-min-width: 16px; " +
+                        "-fx-min-height: 16px; " +
+                        "-fx-max-width: 16px; " +
+                        "-fx-max-height: 16px;"
+        );
+
+        round5.setStyle(
+                "-fx-background-radius: 80em; " +
+                        "-fx-min-width: 16px; " +
+                        "-fx-min-height: 16px; " +
+                        "-fx-max-width: 16px; " +
+                        "-fx-max-height: 16px;"
+        );
+
+        round6.setStyle(
+                "-fx-background-radius: 80em; " +
+                        "-fx-min-width: 16px; " +
+                        "-fx-min-height: 16px; " +
+                        "-fx-max-width: 16px; " +
+                        "-fx-max-height: 16px;"
+        );
+
+        round7.setStyle(
+                "-fx-background-radius: 80em; " +
+                        "-fx-min-width: 16px; " +
+                        "-fx-min-height: 16px; " +
+                        "-fx-max-width: 16px; " +
+                        "-fx-max-height: 16px;"
+        );
+
+        round8.setStyle(
+                "-fx-background-radius: 80em; " +
+                        "-fx-min-width: 16px; " +
+                        "-fx-min-height: 16px; " +
+                        "-fx-max-width: 16px; " +
+                        "-fx-max-height: 16px;"
+        );
+
+        np0.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        np1.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        np2.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        np3.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        np4.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        np5.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        np6.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        np7.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        np8.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        np9.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        npstar.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+        nphash.setStyle(
+                "-fx-min-width: 40px; " +
+                        "-fx-min-height: 40px; " +
+                        "-fx-max-width: 40px; " +
+                        "-fx-max-height: 40px;"
+        );
+
+//        screen.setStyle(
+//                "-fx-min-width: 40px; " +
+//                        "-fx-min-height: 40px; " +
+//                        "-fx-max-width: 40px; " +
+//                        "-fx-max-height: 40px;"
+//        );
+
+
+//        screen.setStyle(
+//                "-fx-background-color: darkblue;"
+//        );
+        screen.setTranslateX(300);
+        screen.setTranslateY(350);
+
+        print.setTranslateX(600);
+        print.setTranslateY(125);
+
+
+        np1.setTranslateX(520);
+        np1.setTranslateY(300);
+        np2.setTranslateX(560);
+        np2.setTranslateY(300);
+        np3.setTranslateX(600);
+        np3.setTranslateY(300);
+        np4.setTranslateX(520);
+        np4.setTranslateY(340);
+        np5.setTranslateX(560);
+        np5.setTranslateY(340);
+        np6.setTranslateX(600);
+        np6.setTranslateY(340);
+        np7.setTranslateX(520);
+        np7.setTranslateY(380);
+        np8.setTranslateX(560);
+        np8.setTranslateY(380);
+        np9.setTranslateX(600);
+        np9.setTranslateY(380);
+        npstar.setTranslateX(520);
+        npstar.setTranslateY(420);
+        np0.setTranslateX(560);
+        np0.setTranslateY(420);
+        nphash.setTranslateX(600);
+        nphash.setTranslateY(420);
+
+
+
+        round1.setTranslateX(257);
+        round1.setTranslateY(100);
+        round3.setTranslateX(307);
+        round3.setTranslateY(100);
+        round5.setTranslateX(357);
+        round5.setTranslateY(100);
+        round7.setTranslateX(407);
+        round7.setTranslateY(100);
+
+        round2.setTranslateX(257);
+        round2.setTranslateY(200);
+        round4.setTranslateX(307);
+        round4.setTranslateY(200);
+        round6.setTranslateX(357);
+        round6.setTranslateY(200);
+        round8.setTranslateX(407);
+        round8.setTranslateY(200);
+
 
         Group off = new Group();
         Group on = new Group();
@@ -166,8 +426,34 @@ public class GUI extends Application{
         on.getChildren().add(b7);
         on.getChildren().add(b8);
 
+        on.getChildren().add(round1);
+        on.getChildren().add(round2);
+        on.getChildren().add(round3);
+        on.getChildren().add(round4);
+        on.getChildren().add(round5);
+        on.getChildren().add(round6);
+        on.getChildren().add(round7);
+        on.getChildren().add(round8);
 
-        //VBox controlGroup = new VBox();
+        on.getChildren().add(np0);
+        on.getChildren().add(np1);
+        on.getChildren().add(np2);
+        on.getChildren().add(np3);
+        on.getChildren().add(np4);
+        on.getChildren().add(np5);
+        on.getChildren().add(np6);
+        on.getChildren().add(np7);
+        on.getChildren().add(np8);
+        on.getChildren().add(np9);
+        on.getChildren().add(npstar);
+        on.getChildren().add(nphash);
+
+        on.getChildren().add(screen);
+        on.getChildren().add(print);
+
+        on.getChildren().add(under);
+
+
 
         OF = new Scene (off ,700, 500);
         ON = new Scene(on, 700,500);
@@ -175,3 +461,4 @@ public class GUI extends Application{
         window .show();
     }
 }
+
