@@ -74,7 +74,7 @@ public class ChronoTimer {
 
 					power = true;
 					System.out.println("Welcome to the Chronotimer\n");
-					System.out.println("Waiting for Event command: Type 'Event + eventType' (ind/parind)\n");
+					System.out.println("Waiting for Event command: Type 'Event + eventType' (ind/parind/GRP)\n");
 				}
 
 				else if (power == true) {
