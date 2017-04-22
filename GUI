@@ -143,6 +143,22 @@ public class GUI extends Application{
         b7.setTranslateX(400);
         b7.setTranslateY(60);
 
+        b1.setOnAction( e -> {
+            b1.setStyle("-fx-background-color: lawngreen");
+        });
+
+        b3.setOnAction( e -> {
+            b3.setStyle("-fx-background-color: lawngreen");
+        });
+
+        b5.setOnAction( e -> {
+            b5.setStyle("-fx-background-color: lawngreen");
+        });
+
+        b7.setOnAction( e -> {
+            b7.setStyle("-fx-background-color: lawngreen");
+        });
+        
         two.setTranslateX(257);
         two.setTranslateY(140);
         four.setTranslateX(307);
@@ -160,6 +176,22 @@ public class GUI extends Application{
         b6.setTranslateY(160);
         b8.setTranslateX(400);
         b8.setTranslateY(160);
+        
+        b2.setOnAction( e -> {
+            b2.setStyle("-fx-background-color: red");
+        });
+
+        b4.setOnAction( e -> {
+            b4.setStyle("-fx-background-color: red");
+        });
+
+        b6.setOnAction( e -> {
+            b6.setStyle("-fx-background-color: red");
+        });
+
+        b8.setOnAction( e -> {
+            b8.setStyle("-fx-background-color: red");
+        });
 
         start.setTranslateX(200);
         start.setTranslateY(60);
