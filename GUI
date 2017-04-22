@@ -8,13 +8,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.control.Label;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.shape.Box;
-
-
-
-
 
 
 public class GUI extends Application{
@@ -91,8 +89,6 @@ public class GUI extends Application{
 
 
 
-
-
     public static void main(String[] args){
 
         launch(args);
@@ -104,11 +100,11 @@ public class GUI extends Application{
 
         window.setTitle("ChronoTimer");
 
-        power1.setOnAction(e -> window.setScene(ON));
+        //power1.setOnAction(e -> window.setScene(ON));
         power1.setTranslateX(10);
         power1.setTranslateY(10);
 
-        power2.setOnAction(e -> window.setScene(OF));
+        //power2.setOnAction(e -> window.setScene(OF));
         power2.setTranslateX(10);
         power2.setTranslateY(10);
 
@@ -453,6 +449,34 @@ public class GUI extends Application{
 
         on.getChildren().add(under);
 
+        power1.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.setPower();
+                window.setScene(ON);
+            }
+        });
+        power2.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.setPower();
+                window.setScene(OF);
+            }
+        });
+        function.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.event("grp");
+                Chrono.newRun();
+            }
+        });
+        b1.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.trigChannel(1);
+            }
+        });
+        b2.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.trigChannel(2);
+            }
+        });
 
 
         OF = new Scene (off ,700, 500);
