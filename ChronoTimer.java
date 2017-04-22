@@ -360,7 +360,13 @@ public class ChronoTimer {
 			}
 			else if(channel == 2)
 			{
-				updGRP();
+				if(totRacers == 0)
+                		{
+                    			System.out.println("race not started");
+                		}
+                		else {
+                    			updGRP();
+               			 }
 			}
 			else
 			{
