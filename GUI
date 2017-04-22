@@ -18,6 +18,7 @@ import javafx.scene.shape.Box;
 public class GUI extends Application{
 
     Stage window;
+    static ChronoTimer Chrono;
 
     Scene OF;
     Scene ON;
@@ -92,6 +93,7 @@ public class GUI extends Application{
     public static void main(String[] args){
 
         launch(args);
+        Chrono = new ChronoTimer();
     }
 
     @Override
