@@ -71,6 +71,8 @@ public class GUI extends Application{
     Button np9 = new Button("9");
     Button npstar = new Button("*");
     Button nphash = new Button("#");
+    Button Larrow = new Button("←");
+    Button Rarrow = new Button("→");
 
 
     Label title = new Label("Chronotimer TEAM EZ");
@@ -327,6 +329,18 @@ public class GUI extends Application{
                         "-fx-max-width: 40px; " +
                         "-fx-max-height: 40px;"
         );
+         Larrow.setStyle( "-fx-font-size: 15px; " +
+                "-fx-min-width: 35px; " +
+                "-fx-min-height: 25px; " +
+                "-fx-max-width: 35px; " +
+                "-fx-max-height: 25px;"
+        );
+        Rarrow.setStyle( "-fx-font-size: 15px; " +
+                "-fx-min-width: 35px; " +
+                "-fx-min-height: 25px; " +
+                "-fx-max-width: 35px; " +
+                "-fx-max-height: 25px;"
+        );
 
 //        screen.setStyle(
 //                "-fx-min-width: 40px; " +
@@ -371,7 +385,10 @@ public class GUI extends Application{
         nphash.setTranslateX(600);
         nphash.setTranslateY(420);
 
-
+        Larrow.setTranslateX(50);
+        Larrow.setTranslateY(325);
+        Rarrow.setTranslateX(100);
+        Rarrow.setTranslateY(325);
 
         round1.setTranslateX(257);
         round1.setTranslateY(100);
@@ -452,6 +469,9 @@ public class GUI extends Application{
         on.getChildren().add(np9);
         on.getChildren().add(npstar);
         on.getChildren().add(nphash);
+        
+        on.getChildren().add(Larrow);
+        on.getChildren().add(Rarrow);
 
         on.getChildren().add(screen);
         on.getChildren().add(print);
