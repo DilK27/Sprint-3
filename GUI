@@ -20,6 +20,11 @@ public class GUI extends Application{
     Stage window;
     static ChronoTimer Chrono;
 
+    // need an array of booleans to keep track of last state and then switch between color and white
+
+    boolean[] clicked = new boolean[8];
+
+
     Scene OF;
     Scene ON;
 
@@ -143,22 +148,7 @@ public class GUI extends Application{
         b7.setTranslateX(400);
         b7.setTranslateY(60);
 
-        b1.setOnAction( e -> {
-            b1.setStyle("-fx-background-color: lawngreen");
-        });
 
-        b3.setOnAction( e -> {
-            b3.setStyle("-fx-background-color: lawngreen");
-        });
-
-        b5.setOnAction( e -> {
-            b5.setStyle("-fx-background-color: lawngreen");
-        });
-
-        b7.setOnAction( e -> {
-            b7.setStyle("-fx-background-color: lawngreen");
-        });
-        
         two.setTranslateX(257);
         two.setTranslateY(140);
         four.setTranslateX(307);
@@ -176,22 +166,7 @@ public class GUI extends Application{
         b6.setTranslateY(160);
         b8.setTranslateX(400);
         b8.setTranslateY(160);
-        
-        b2.setOnAction( e -> {
-            b2.setStyle("-fx-background-color: red");
-        });
 
-        b4.setOnAction( e -> {
-            b4.setStyle("-fx-background-color: red");
-        });
-
-        b6.setOnAction( e -> {
-            b6.setStyle("-fx-background-color: red");
-        });
-
-        b8.setOnAction( e -> {
-            b8.setStyle("-fx-background-color: red");
-        });
 
         start.setTranslateX(200);
         start.setTranslateY(60);
@@ -503,14 +478,67 @@ public class GUI extends Application{
         });
         b1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
+                b1.setStyle("-fx-background-color: lawngreen");
+
                 Chrono.trigChannel(1);
             }
         });
         b2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
+                b2.setStyle("-fx-background-color: red");
+
                 Chrono.trigChannel(2);
             }
         });
+
+        b3.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                b3.setStyle("-fx-background-color: lawngreen");
+
+                Chrono.trigChannel(3);
+            }
+        });
+
+        b4.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                b4.setStyle("-fx-background-color: red");
+
+                Chrono.trigChannel(4);
+            }
+        });
+
+        b5.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                b5.setStyle("-fx-background-color: lawngreen");
+
+                Chrono.trigChannel(5);
+            }
+        });
+
+        b6.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                b6.setStyle("-fx-background-color: red");
+
+                Chrono.trigChannel(6);
+            }
+        });
+
+        b7.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                b7.setStyle("-fx-background-color: lawngreen");
+
+                Chrono.trigChannel(7);
+            }
+        });
+
+        b8.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                b8.setStyle("-fx-background-color: red");
+
+                Chrono.trigChannel(8);
+            }
+        });
+
         round1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 Chrono.togChannel(1);
@@ -696,10 +724,11 @@ public class GUI extends Application{
             }
         });
 
+
+
         OF = new Scene (off ,700, 500);
         ON = new Scene(on, 700,500);
         window.setScene(OF);
         window .show();
     }
 }
-
