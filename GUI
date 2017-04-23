@@ -401,6 +401,7 @@ public class GUI extends Application {
 		power1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.setPower();
+				reset();
 				window.setScene(ON);
 			}
 		});
@@ -408,6 +409,7 @@ public class GUI extends Application {
 		power2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.setPower();
+				reset();
 				window.setScene(OF);
 			}
 		});
