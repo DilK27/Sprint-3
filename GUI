@@ -410,6 +410,8 @@ public class GUI extends Application {
 			public void handle(ActionEvent event) {
 				Chrono.setPower();
 				reset();
+				stdoutArea.clear();
+                		resultArea.clear();
 				window.setScene(OF);
 			}
 		});
