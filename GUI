@@ -511,7 +511,190 @@ public class GUI extends Application{
                 Chrono.trigChannel(2);
             }
         });
-
+        round1.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.togChannel(1);
+                if(Chrono.channels[1])
+                {
+                    round1.setStyle("-fx-background-color: lawngreen; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+                else
+                {
+                    round1.setStyle("-fx-background-color: darkred; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+            }
+        });
+        round2.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.togChannel(2);
+                if(Chrono.channels[2])
+                {
+                    round2.setStyle("-fx-background-color: lawngreen; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+                else
+                {
+                    round2.setStyle("-fx-background-color: darkred; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+            }
+        });
+        round3.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.togChannel(3);
+                if(Chrono.channels[3])
+                {
+                    round3.setStyle("-fx-background-color: lawngreen; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+                else
+                {
+                    round3.setStyle("-fx-background-color: darkred; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+            }
+        });
+        round4.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.togChannel(4);
+                if(Chrono.channels[4])
+                {
+                    round4.setStyle("-fx-background-color: lawngreen; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+                else
+                {
+                    round4.setStyle("-fx-background-color: darkred; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+            }
+        });
+        round5.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.togChannel(5);
+                if(Chrono.channels[5])
+                {
+                    round5.setStyle("-fx-background-color: lawngreen; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+                else
+                {
+                    round5.setStyle("-fx-background-color: darkred; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+            }
+        });
+        round6.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.togChannel(6);
+                if(Chrono.channels[6])
+                {
+                    round6.setStyle("-fx-background-color: lawngreen; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+                else
+                {
+                    round6.setStyle("-fx-background-color: darkred; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+            }
+        });
+        round7.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.togChannel(7);
+                if(Chrono.channels[7])
+                {
+                    round7.setStyle("-fx-background-color: lawngreen; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+                else
+                {
+                    round7.setStyle("-fx-background-color: darkred; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+            }
+        });
+        round8.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.togChannel(8);
+                if(Chrono.channels[8])
+                {
+                    round8.setStyle("-fx-background-color: lawngreen; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+                else
+                {
+                    round8.setStyle("-fx-background-color: darkred; " +
+                            "-fx-background-radius: 80em; " +
+                            "-fx-min-width: 16px; " +
+                            "-fx-min-height: 16px; " +
+                            "-fx-max-width: 16px; " +
+                            "-fx-max-height: 16px;");
+                }
+            }
+        });
 
         OF = new Scene (off ,700, 500);
         ON = new Scene(on, 700,500);
