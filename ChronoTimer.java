@@ -639,15 +639,22 @@ public class ChronoTimer {
 	}
 
 	static void updScreen() {
-        	GUI.resultArea.clear();
-        	GUI.resultArea.appendText("to race:\n");
-        	for (int i = 0; i < racers.size(); ++i) {
-           	 	GUI.resultArea.appendText(String.valueOf(racers.get(i).racerNum) + "\n");
-        	}
-        	GUI.resultArea.appendText("completed");
-        	for (int i = 0; i < completed.size(); ++i) {
-           		 GUI.resultArea.appendText(String.valueOf(completed.get(i).racerNum)
-                    		+ stopWatch.formatTime(completed.get(i).fin - completed.get(i).start) + "\n");
-        }
+    	GUI.resultArea.clear();
+    	GUI.resultArea.appendText("To race:\n");
+    	for (int i = 0; i < racers.size(); ++i) {
+       	 	GUI.resultArea.appendText(String.valueOf(racers.get(i).racerNum) + "\n");
+    	}
+    	
+    	GUI.resultArea.appendText("Racing:\n");
+    	for (int i = 0; i < toFinish.size(); ++i) {
+       	 	GUI.resultArea.appendText(String.valueOf(toFinish.get(i).racerNum) + "\n");
+    	}
+    	
+    	GUI.resultArea.appendText("Completed:\n");
+    	for (int i = 0; i < completed.size(); ++i) {
+       		 GUI.resultArea.appendText(String.valueOf(completed.get(i).racerNum)
+                		+ "  " + stopWatch.formatTime(completed.get(i).fin - completed.get(i).start) + "\n");
+    	}
+	}
     }
 }
