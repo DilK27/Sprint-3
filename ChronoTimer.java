@@ -20,6 +20,7 @@ public class ChronoTimer {
 	static long GRP[][];
 	// how many racers have finished
 	static int GRPC;
+	static int GRPC2;
 	// the final order of the racers
 	static String GRPF[];
 	// time
@@ -37,7 +38,7 @@ public class ChronoTimer {
 		ChronoTimer.power = false;
 		ChronoTimer.run = false;
 		ChronoTimer.event = "";
-
+		out = false;
 		ChronoTimer.channels = new boolean[MAX_CHANNELS];
 	}
 
@@ -317,6 +318,7 @@ public class ChronoTimer {
 		totRacers = 0;
 		GRP = null;
 		GRPC = 0;
+		GUI.stdoutArea.appendText("run ended\n");
 		System.out.println("Run ended \n");
 	}
 
@@ -385,6 +387,7 @@ public class ChronoTimer {
 				if (totRacers == 0) {
 					System.out.println("race not started");
 				} else {
+					 GUI.stdoutArea.appendText("tirggered\n");
 					updGRP();
 				}
 			} else {
@@ -588,7 +591,6 @@ public class ChronoTimer {
 		channels[2] = true;
 		// set up end time array GRP[][]
 		long initial = time.millis();
-		;
 		int current = racers.size();
 		GRP = new long[current][];
 		// initilize GRP so it can be set
@@ -607,28 +609,31 @@ public class ChronoTimer {
 	// update the array after each trig 2 call
 	static void updGRP() {
 
-		GRP[GRPC][1] = time.millis();
-		;
-		++GRPC;
-		// check if all racer finished
-		if (GRPC == totRacers) {
-			System.out.println(
-					"Race end! \n" + "please enter the racers numbers in the orger they finished (exp.  5 6 12 9) ");
-			// get racer order
-			boolean check = true;
-			while (check) {
-				input = console.nextLine();
-				GRPF = input.split("\\s+");
+        GRP[GRPC][1] = time.millis();
 
-				if (GRPF.length != totRacers) {
-					System.out.println("invalid number of racers entered");
-				} else {
-					endGRP(GRPF);
-					check = false;
-				}
-			}
-		}
-	}
+        ++GRPC;
+        // check if all racer finished
+        if (GRPC == totRacers) {
+            System.out.println(
+                    "Race end! \n" + "please enter the racers numbers in the orger they finished (exp.  5 6 12 9) ");
+            GUI.stdoutArea.appendText("enter racer oder\n");
+            // get racer order
+                out = true;
+                GRPF = new String[GRPC];
+                GRPC2 = 0;
+
+        }
+    }
+static void updGRPF(String a)
+    {
+        GRPF[GRPC2] = a;
+        GUI.stdoutArea.appendText(" place " + String.valueOf(GRPC2) + "\n");
+        ++GRPC2;
+        if(GRPC == GRPC2) {
+            endGRP(GRPF);
+            out = false;
+        }
+    }
 
 	static void endGRP(String[] nums) {
 		for (int i = 0; (i < nums.length) && (i < totRacers); ++i) {
@@ -645,6 +650,7 @@ public class ChronoTimer {
 		while (!racers.isEmpty()) {
 			completed.add(racers.pop());
 		}
+		updScreen();
 		System.out.println("times updated.");
 	}
 
