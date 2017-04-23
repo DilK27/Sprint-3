@@ -444,6 +444,8 @@ public class GUI extends Application {
 					b1.setStyle(" -fx-min-width: 25px; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
 							+ "-fx-max-height: 26px;");
 				}
+				
+				Chrono.updScreen();
 			}
 		});
 		b2.setOnAction(new EventHandler<ActionEvent>() {
@@ -457,6 +459,8 @@ public class GUI extends Application {
 					b2.setStyle(" -fx-min-width: 25px; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
 							+ "-fx-max-height: 26px;");
 				}
+				
+				Chrono.updScreen();
 			}
 		});
 
@@ -471,6 +475,8 @@ public class GUI extends Application {
 					b3.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
 							+ "-fx-max-height: 26px;");
 				}
+				
+				Chrono.updScreen();
 			}
 		});
 
@@ -486,6 +492,8 @@ public class GUI extends Application {
 					b4.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
 							+ "-fx-max-height: 26px;");
 				}
+				
+				Chrono.updScreen();
 			}
 		});
 
@@ -500,6 +508,8 @@ public class GUI extends Application {
 					b5.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
 							+ "-fx-max-height: 26px;");
 				}
+				
+				Chrono.updScreen();
 			}
 		});
 
@@ -514,6 +524,8 @@ public class GUI extends Application {
 					b6.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
 							+ "-fx-max-height: 26px;");
 				}
+				
+				Chrono.updScreen();
 
 			}
 		});
@@ -529,6 +541,8 @@ public class GUI extends Application {
 					b7.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
 							+ "-fx-max-height: 26px;");
 				}
+				
+				Chrono.updScreen();
 
 			}
 		});
@@ -543,6 +557,8 @@ public class GUI extends Application {
 					b8.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
 							+ "-fx-max-height: 26px;");
 				}
+				
+				Chrono.updScreen();
 			}
 		});
 		round1.setOnAction(new EventHandler<ActionEvent>() {
