@@ -16,11 +16,11 @@ public class ChronoTimer {
 	static LinkedList<Racer> racers = new LinkedList<Racer>();
 	static LinkedList<Racer> toFinish = new LinkedList<Racer>();
 	static LinkedList<Racer> completed = new LinkedList<Racer>();
-	//array of race end times [racers][bib#,end time]
+	// array of race end times [racers][bib#,end time]
 	static long GRP[][];
-	//how many racers have finished
+	// how many racers have finished
 	static int GRPC;
-	//the final order of the racers
+	// the final order of the racers
 	static String GRPF[];
 	// time
 	static Clock time;
@@ -143,7 +143,7 @@ public class ChronoTimer {
 			else if (splitted[0].equalsIgnoreCase("ENDRUN") && power && !event.isEmpty() && run) {
 
 				endrun();
-				
+
 			}
 
 			else if (splitted[0].equalsIgnoreCase("TIME")) {
@@ -210,6 +210,8 @@ public class ChronoTimer {
 	static void num(int racernum) {
 		totRacers++;
 		racers.add(new Racer(racernum, totRacers));
+
+		GUI.stdoutArea.appendText("Racer " + racernum + " added\n");
 		System.out.println("Racer " + racernum + " has been added");
 	}
 
@@ -218,21 +220,33 @@ public class ChronoTimer {
 			if (event.isEmpty()) {
 				if (input.equalsIgnoreCase("IND")) {
 					event = input;
+
+					GUI.stdoutArea.appendText("Individual Race Selected\n");
+					GUI.stdoutArea.appendText("Press * to start a new run\n");
+
 					System.out.println("Individual Race has been Selected\n");
-					
+
 					System.out.println("Waiting for Newrun: Type Newrun\n");
 				} else if (input.equalsIgnoreCase("PARIND")) {
 					event = input;
+
+					GUI.stdoutArea.appendText("Parallel Individual Race Selected\n");
+					GUI.stdoutArea.appendText("Press * to start a new run\n");
+
 					System.out.println("Parallel Individual Race has been Selected\n");
 					System.out.println("for PARNID use START and STOP commands instead of triggers.");
 					System.out.println("Waiting for Newrun: Type Newrun\n");
-				}else if(input.equalsIgnoreCase("GRP")) {
+				} else if (input.equalsIgnoreCase("GRP")) {
 					event = input;
+
+					GUI.stdoutArea.appendText("Group Race Selected");
+					GUI.stdoutArea.appendText("Press * to start a new run");
+
 					System.out.println("group of competitors Race has been Selected\n");
 					System.out.println("for GRP use Trig 1 to begin race, and Trig 2 to end racers 1 at a time. \n"
 							+ "after all racers have finished, event will end.");
 					System.out.println("Waiting for Newrun: Type Newrun\n");
-				}else {
+				} else {
 					System.out.println("That is not a valid event type");
 				}
 			} else {
@@ -266,11 +280,18 @@ public class ChronoTimer {
 		power = !power;
 
 		if (power == true) {
+
 			GUI.stdoutArea.appendText("The power is on\n");
+			GUI.stdoutArea.appendText("Select an event\n");
+			GUI.stdoutArea.appendText("   1. IND\n");
+			GUI.stdoutArea.appendText("   2. PARIND\n");
+			GUI.stdoutArea.appendText("   3. GRP\n");
+
 			System.out.println("\nThe power is on\n");
 		}
 
 		else {
+
 			System.out.println("\nThe power is off\n");
 		}
 	}
@@ -278,6 +299,11 @@ public class ChronoTimer {
 	static void newRun() {
 		run = true;
 		runCounter = runCounter + 1;
+
+		GUI.stdoutArea.appendText("New run started\n");
+		GUI.stdoutArea.appendText("Add racer numbers,\n");
+		GUI.stdoutArea.appendText("	 press # to enter:\n");
+
 		System.out.println("New run initiated \n");
 		System.out.println("enter command 'list' for lists of commands\n");
 	}
@@ -311,17 +337,16 @@ public class ChronoTimer {
 	}
 
 	static void start() {
-		//check to make sure 0 < reacers.size()
+		// check to make sure 0 < reacers.size()
 		if (!racers.isEmpty()) {
-			//if it is a grp event, all racers will have same start time, and race will begin on start.
-			if(event.equalsIgnoreCase("GRP"))
-			{
+			// if it is a grp event, all racers will have same start time, and
+			// race will begin on start.
+			if (event.equalsIgnoreCase("GRP")) {
 				InitGRP();
 				System.out.println("Racers are off!");
-			}
-			else
-			{
-				// look at first racer's start channel and let trigChannel do the
+			} else {
+				// look at first racer's start channel and let trigChannel do
+				// the
 				// rest
 				trigChannel(racers.getFirst().index * 2 - 1);
 			}
@@ -331,7 +356,7 @@ public class ChronoTimer {
 	}
 
 	static void finish() {
-		 if (!toFinish.isEmpty()) {
+		if (!toFinish.isEmpty()) {
 			trigChannel(toFinish.getFirst().index * 2);
 		} else {
 			System.out.println("No racers to finish");
@@ -340,10 +365,11 @@ public class ChronoTimer {
 	}
 
 	static void togChannel(int channel) {
-		if(event.equalsIgnoreCase("GRP")){
+		if (event.equalsIgnoreCase("GRP")) {
 			System.out.println("tog dissabled for Group event");
 			return;
-		}if (!channels[channel]) {
+		}
+		if (!channels[channel]) {
 			channels[channel] = true;
 		} else {
 			channels[channel] = false;
@@ -352,35 +378,27 @@ public class ChronoTimer {
 
 	static void trigChannel(int channel) {
 
-		if(event.equalsIgnoreCase("GRP"))
-		{
-			if(channel == 1)
-			{
+		if (event.equalsIgnoreCase("GRP")) {
+			if (channel == 1) {
 				start();
-			}
-			else if(channel == 2)
-			{
-				if(totRacers == 0)
-                		{
-                    			System.out.println("race not started");
-                		}
-                		else {
-                    			updGRP();
-               			 }
-			}
-			else
-			{
+			} else if (channel == 2) {
+				if (totRacers == 0) {
+					System.out.println("race not started");
+				} else {
+					updGRP();
+				}
+			} else {
 				System.out.println("invalid channel for this race.");
 			}
 			return;
 		}
-		
-		// used for determining which list a racer is in
-		boolean found = false;
-		
-		// list of elements to remove from list
-		LinkedList<Racer> temp = new LinkedList<>();
-		if (channel < MAX_CHANNELS && channel > 0) {
+
+		else if (channel < MAX_CHANNELS && channel > 0) {
+			// used for determining which list a racer is in
+			boolean found = false;
+
+			// list of elements to remove from list
+			LinkedList<Racer> temp = new LinkedList<>();
 			if (event.equalsIgnoreCase("IND")) {
 				// determine if start or finish channel
 				// if start channel:
@@ -458,7 +476,7 @@ public class ChronoTimer {
 			} else if (event.equalsIgnoreCase("PARIND")) {
 				// determine if start or finish channel
 				// if start channel:
-				
+
 				if (channel % 2 == 1) {
 					// if channel toggled on
 					// first, check if racer already started. If so, update
@@ -552,92 +570,84 @@ public class ChronoTimer {
 		}
 
 	}
-	//initialize GRP array and values when start is called.
-	static void InitGRP()
-	{
-		//turn on event channels
+
+	// initialize GRP array and values when start is called.
+	static void InitGRP() {
+		// turn on event channels
 		channels[1] = true;
 		channels[2] = true;
-		//set up end time array GRP[][]
-		long initial = time.millis();;
+		// set up end time array GRP[][]
+		long initial = time.millis();
+		;
 		int current = racers.size();
 		GRP = new long[current][];
-		//initilize GRP so it can be set
-		for(int i = 0; i < current; ++i)
-		{
+		// initilize GRP so it can be set
+		for (int i = 0; i < current; ++i) {
 			GRP[i] = new long[2];
 		}
-		//set GRP start values
-		for(int i = 0; i < current; ++i)
-		{
+		// set GRP start values
+		for (int i = 0; i < current; ++i) {
 			Racer temp = racers.get(i);
 			temp.start = initial;
 			GRP[i][0] = temp.racerNum;
 			GRP[i][1] = initial;
 		}
 	}
-	//update the array after each trig 2 call
-	static void updGRP()
-	{
-		
-		GRP[GRPC][1] = time.millis();;
+
+	// update the array after each trig 2 call
+	static void updGRP() {
+
+		GRP[GRPC][1] = time.millis();
+		;
 		++GRPC;
-		//check if all racer finished
-		if(GRPC == totRacers){
-			System.out.println("Race end! \n"
-					+ "please enter the racers numbers in the orger they finished (exp.  5 6 12 9) ");
-			//get racer order
+		// check if all racer finished
+		if (GRPC == totRacers) {
+			System.out.println(
+					"Race end! \n" + "please enter the racers numbers in the orger they finished (exp.  5 6 12 9) ");
+			// get racer order
 			boolean check = true;
-			while(check)
-			{
+			while (check) {
 				input = console.nextLine();
 				GRPF = input.split("\\s+");
-				
-				if(GRPF.length != totRacers)
-				{
+
+				if (GRPF.length != totRacers) {
 					System.out.println("invalid number of racers entered");
-				}
-				else
-				{
+				} else {
 					endGRP(GRPF);
 					check = false;
 				}
 			}
 		}
 	}
-	
-	static void endGRP(String[] nums)
-	{
-		for(int i = 0; (i < nums.length) && (i < totRacers); ++i)
-		{
+
+	static void endGRP(String[] nums) {
+		for (int i = 0; (i < nums.length) && (i < totRacers); ++i) {
 			ListIterator<Racer> we = racers.listIterator();
-			while(we.hasNext())
-			{
+			while (we.hasNext()) {
 				Racer temp = we.next();
 				int n = Integer.parseInt(nums[i]);
-				if(temp.racerNum == n)
-				{
+				if (temp.racerNum == n) {
 					temp.fin = GRP[i][1];
 				}
 			}
 		}
-		//add racers to completed
-		while(!racers.isEmpty())
-		{
+		// add racers to completed
+		while (!racers.isEmpty()) {
 			completed.add(racers.pop());
 		}
 		System.out.println("times updated.");
 	}
-	 static void updScreen()
-    {
-        GUI.resultArea.clear();
-        GUI.resultArea.appendText("to race:\n");
-        for(int i = 0; i < racers.size(); ++i){
-            GUI.resultArea.appendText(String.valueOf(racers.get(i).racerNum));
-        }
-        GUI.resultArea.appendText("");
-        for(int i = 0 ; i < completed.size(); ++i){
-            GUI.resultArea.appendText(String.valueOf(completed.get(i).racerNum) + stopWatch.formatTime(completed.get(i).fin - completed.get(i).start));
-        }
-    }
+
+	static void updScreen() {
+		GUI.resultArea.clear();
+		GUI.resultArea.appendText("to race:\n");
+		for (int i = 0; i < racers.size(); ++i) {
+			GUI.resultArea.appendText(String.valueOf(racers.get(i).racerNum));
+		}
+		GUI.resultArea.appendText("");
+		for (int i = 0; i < completed.size(); ++i) {
+			GUI.resultArea.appendText(String.valueOf(completed.get(i).racerNum)
+					+ stopWatch.formatTime(completed.get(i).fin - completed.get(i).start));
+		}
+	}
 }
