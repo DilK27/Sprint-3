@@ -555,6 +555,18 @@ public class GUI extends Application{
                 Chrono.newRun();
             }
         });
+         npstar.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                if(Chrono.run)
+                {
+                    Chrono.endrun();
+                }
+                else 
+                {
+                    Chrono.newRun();
+                }
+            }
+        });
         b1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 Chrono.trigChannel(1);
