@@ -547,29 +547,39 @@ public class ChronoTimer {
 	}
 
 	static void printlists() {
+        GUI.stdoutArea.appendText("racers: \n");
+        System.out.println("racers: \n ");
+        for (Racer s : racers) {
+            System.out.print("      ");
 
-		System.out.println("racers: ");
-		for (Racer s : racers) {
-			System.out.print("      ");
-			System.out.println("Racer " + s.racerNum + " start: " + stopWatch.formatTime(s.start) + " finish: "
-					+ stopWatch.formatTime(s.fin));
-		}
+            GUI.stdoutArea.appendText(String.valueOf("Racer " + s.racerNum +  " time: " + stopWatch.formatTime(s.fin - s.start) + "\n"));
 
-		System.out.println("toFinish: ");
-		for (Racer s : toFinish) {
-			System.out.print("      ");
-			System.out.println("Racer " + s.racerNum + " start: " + stopWatch.formatTime(s.start) + " finish: "
-					+ stopWatch.formatTime(s.fin));
-		}
+            System.out.println("Racer " + s.racerNum + " start: " + stopWatch.formatTime(s.start) + " finish: "
+                    + stopWatch.formatTime(s.fin));
+        }
+        GUI.stdoutArea.appendText("toFinish: \n");
+        System.out.println("toFinish: ");
+        for (Racer s : toFinish) {
+            System.out.print("      ");
 
-		System.out.println("completed: ");
-		for (Racer s : completed) {
-			System.out.print("      ");
-			System.out.println("Racer " + s.racerNum + " start: " + stopWatch.formatTime(s.start) + " finish: "
-					+ stopWatch.formatTime(s.fin));
-		}
+            GUI.stdoutArea.appendText(String.valueOf("Racer " + s.racerNum +  " time: " + stopWatch.formatTime(s.fin - s.start) + "\n"));
 
-	}
+            System.out.println("Racer " + s.racerNum + " start: " + stopWatch.formatTime(s.start) + " finish: "
+                    + stopWatch.formatTime(s.fin));
+        }
+        GUI.stdoutArea.appendText("completed:  \n");
+        System.out.println("completed: ");
+        for (Racer s : completed) {
+            System.out.print("      ");
+
+            GUI.stdoutArea.appendText(String.valueOf("Racer " + s.racerNum +  " time: " + stopWatch.formatTime(s.fin - s.start) + "\n"));
+
+            System.out.println("Racer " + s.racerNum + " start: " + stopWatch.formatTime(s.start) + " finish: "
+                    + stopWatch.formatTime(s.fin) + "time: " + stopWatch.formatTime(s.fin - s.start) + "\n");
+        }
+
+    }
+
 
 	// initialize GRP array and values when start is called.
 	static void InitGRP() {
