@@ -720,17 +720,24 @@ public class GUI extends Application {
 			}
 		});
 		nphash.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				if (!Chrono.event.isEmpty()) {
-					if(!racer.isEmpty()){
-				stdoutArea.appendText("\n");
-						Chrono.num(Integer.parseInt(racer));
-						racer = "";
-					}
-				}
+            public void handle(ActionEvent event) {
+                if (!Chrono.event.isEmpty()) {
+                    if(!racer.isEmpty()){
+                        if(!Chrono.out) {
+                            stdoutArea.appendText("\n");
+                            Chrono.num(Integer.parseInt(racer));
+                            racer = "";
+                        }
+                        else
+                        {
+                            Chrono.updGRPF(racer);
+                            racer = "";
+                        }
+                    }
+                }
 
-			}
-		});
+            }
+        });
 		
 		printer.setOnAction(new EventHandler<ActionEvent>() {
         	    @Override
