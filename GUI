@@ -44,6 +44,9 @@ public class GUI extends Application{
 
     Scene OF;
     Scene ON;
+    
+    static TextArea resultArea = new TextArea();
+    static TextArea stdoutArea = new TextArea();
 
     Button OFF;
     Button power1 = new Button("Power");
@@ -451,13 +454,11 @@ public class GUI extends Application{
         Group off = new Group();
         Group on = new Group();
         
-        TextArea resultArea = new TextArea();
         resultArea.setTranslateX(200);
         resultArea.setTranslateY(250);
         resultArea.setPrefColumnCount(15);
         resultArea.setPrefRowCount(10);
         
-        TextArea stdoutArea = new TextArea();
         stdoutArea.setTranslateX(475);
         stdoutArea.setTranslateY(50);
         stdoutArea.setPrefColumnCount(15);
