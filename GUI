@@ -73,6 +73,8 @@ public class GUI extends Application{
     Button nphash = new Button("#");
     Button Larrow = new Button("←");
     Button Rarrow = new Button("→");
+    Button Uarrow = new Button("↑");
+    Button Darrow = new Button("↓");
 
 
     Label title = new Label("Chronotimer TEAM EZ");
@@ -329,7 +331,7 @@ public class GUI extends Application{
                         "-fx-max-width: 40px; " +
                         "-fx-max-height: 40px;"
         );
-         Larrow.setStyle( "-fx-font-size: 15px; " +
+        Larrow.setStyle( "-fx-font-size: 15px; " +
                 "-fx-min-width: 35px; " +
                 "-fx-min-height: 25px; " +
                 "-fx-max-width: 35px; " +
@@ -340,6 +342,18 @@ public class GUI extends Application{
                 "-fx-min-height: 25px; " +
                 "-fx-max-width: 35px; " +
                 "-fx-max-height: 25px;"
+        );
+         Uarrow.setStyle( "-fx-font-size: 15px; " +
+                "-fx-min-width: 30px; " +
+                "-fx-min-height: 35px; " +
+                "-fx-max-width: 30px; " +
+                "-fx-max-height: 35px;"
+        );
+        Darrow.setStyle( "-fx-font-size: 15px; " +
+                "-fx-min-width: 30px; " +
+                "-fx-min-height: 35px; " +
+                "-fx-max-width: 30px; " +
+                "-fx-max-height: 35px;"
         );
 
 //        screen.setStyle(
@@ -389,6 +403,10 @@ public class GUI extends Application{
         Larrow.setTranslateY(325);
         Rarrow.setTranslateX(100);
         Rarrow.setTranslateY(325);
+        Uarrow.setTranslateX(105);
+        Uarrow.setTranslateY(325);
+        Darrow.setTranslateX(140);
+        Darrow.setTranslateY(325);
 
         round1.setTranslateX(257);
         round1.setTranslateY(100);
@@ -472,6 +490,8 @@ public class GUI extends Application{
         
         on.getChildren().add(Larrow);
         on.getChildren().add(Rarrow);
+        on.getChildren().add(Uarrow);
+        on.getChildren().add(Darrow);
 
         on.getChildren().add(screen);
         on.getChildren().add(print);
