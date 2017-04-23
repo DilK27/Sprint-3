@@ -70,11 +70,6 @@ public class GUI extends Application {
 	Button round7 = new Button();
 	Button round8 = new Button();
 
-	// Button left = new Button();
-	// Button right = new Button();
-	// Button up = new Button();
-	// Button down = new Button();
-
 	Button np0 = new Button("0");
 	Button np1 = new Button("1");
 	Button np2 = new Button("2");
@@ -264,16 +259,6 @@ public class GUI extends Application {
 		Darrow.setStyle("-fx-font-size: 13px; " + "-fx-min-width: 30px; " + "-fx-min-height: 35px; "
 				+ "-fx-max-width: 30px; " + "-fx-max-height: 35px;");
 
-		// screen.setStyle(
-		// "-fx-min-width: 40px; " +
-		// "-fx-min-height: 40px; " +
-		// "-fx-max-width: 40px; " +
-		// "-fx-max-height: 40px;"
-		// );
-
-		// screen.setStyle(
-		// "-fx-background-color: darkblue;"
-		// );
 		screen.setTranslateX(300);
 		screen.setTranslateY(350);
 
@@ -411,9 +396,6 @@ public class GUI extends Application {
 		on.getChildren().add(Uarrow);
 		on.getChildren().add(Darrow);
 
-		// on.getChildren().add(screen);
-		// on.getChildren().add(print);
-
 		on.getChildren().add(under);
 
 		power1.setOnAction(new EventHandler<ActionEvent>() {
@@ -422,12 +404,14 @@ public class GUI extends Application {
 				window.setScene(ON);
 			}
 		});
+		
 		power2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.setPower();
 				window.setScene(OF);
 			}
 		});
+		
 		function.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.event("grp");
@@ -437,7 +421,6 @@ public class GUI extends Application {
 		
 		swap.setOnAction(new EventHandler<ActionEvent>() {
             		public void handle(ActionEvent event) {
-
                 		if (Chrono.event.equalsIgnoreCase("IND")) {
                     			if (Chrono.toFinish.size() >= 2) {
                         			stdoutArea.appendText("You are able to swap\n");
@@ -448,19 +431,17 @@ public class GUI extends Application {
                         			Racer temp = Chrono.toFinish.removeFirst();
                         			Chrono.toFinish.add(1, temp);
                     			}
-                    
                     			else {
                         			stdoutArea.appendText("Not enough racers to swap\n");
                     			}
                 		}
-				
                 		else {
                     			stdoutArea.appendText("Can only use this feature in event IND\n");
                 		}
             		}
         	});
 		
-		 b1.setOnAction(new EventHandler<ActionEvent>() {
+		b1.setOnAction(new EventHandler<ActionEvent>() {
             		public void handle(ActionEvent event) {
                 		Chrono.trigChannel(1);
                 		Chrono.updScreen();
@@ -474,61 +455,48 @@ public class GUI extends Application {
             		}
         	});
 
-        b3.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
+        	b3.setOnAction(new EventHandler<ActionEvent>() {
+            		public void handle(ActionEvent event) {
+                		Chrono.trigChannel(3);
+                		Chrono.updScreen();
+            		}
+        	});
 
-                Chrono.trigChannel(3);
+        	b4.setOnAction(new EventHandler<ActionEvent>() {
+            		public void handle(ActionEvent event) {
+            			Chrono.trigChannel(4);
+                		Chrono.updScreen();
+            		}
+        	});
 
-                Chrono.updScreen();
-            }
-        });
+        	b5.setOnAction(new EventHandler<ActionEvent>() {
+            		public void handle(ActionEvent event) {
+                		Chrono.trigChannel(5);
+                		Chrono.updScreen();
+            		}
+        	});
 
-        b4.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-                
+        	b6.setOnAction(new EventHandler<ActionEvent>() {
+            		public void handle(ActionEvent event) {
+                		Chrono.trigChannel(6);
+                		Chrono.updScreen();
+            		}
+        	});
 
-                Chrono.trigChannel(4);
+        	b7.setOnAction(new EventHandler<ActionEvent>() {
+            		public void handle(ActionEvent event) {
+                		Chrono.trigChannel(7);
+                		Chrono.updScreen();
+            		}
+        	});
 
-                Chrono.updScreen();
-            }
-        });
-
-        b5.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-
-                Chrono.trigChannel(5);
-
-                Chrono.updScreen();
-            }
-        });
-
-        b6.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-
-                Chrono.trigChannel(6);
-
-                Chrono.updScreen();
-
-            }
-        });
-
-        b7.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-
-                Chrono.trigChannel(7);
-
-                Chrono.updScreen();
-
-            }
-        });
-
-        b8.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-                Chrono.trigChannel(8);
-
-                Chrono.updScreen();
-            }
-        });
+        	b8.setOnAction(new EventHandler<ActionEvent>() {
+            		public void handle(ActionEvent event) {
+                		Chrono.trigChannel(8);
+                		Chrono.updScreen();
+            		}
+        	});
+		
 		round1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.togChannel(1);
@@ -542,6 +510,7 @@ public class GUI extends Application {
 				}
 			}
 		});
+		
 		round2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.togChannel(2);
@@ -555,6 +524,7 @@ public class GUI extends Application {
 				}
 			}
 		});
+		
 		round3.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.togChannel(3);
@@ -568,6 +538,7 @@ public class GUI extends Application {
 				}
 			}
 		});
+		
 		round4.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.togChannel(4);
@@ -581,6 +552,7 @@ public class GUI extends Application {
 				}
 			}
 		});
+		
 		round5.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.togChannel(5);
@@ -594,6 +566,7 @@ public class GUI extends Application {
 				}
 			}
 		});
+		
 		round6.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.togChannel(6);
@@ -607,6 +580,7 @@ public class GUI extends Application {
 				}
 			}
 		});
+		
 		round7.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.togChannel(7);
@@ -620,6 +594,7 @@ public class GUI extends Application {
 				}
 			}
 		});
+		
 		round8.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.togChannel(8);
@@ -642,9 +617,9 @@ public class GUI extends Application {
 				} else {
 					Chrono.event("ind");
 				}
-
 			}
 		});
+		
 		np2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
@@ -653,9 +628,9 @@ public class GUI extends Application {
 				} else {
 					Chrono.event("parind");
 				}
-
 			}
 		});
+		
 		np3.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
@@ -664,9 +639,9 @@ public class GUI extends Application {
 				} else {
 					Chrono.event("grp");
 				}
-
 			}
 		});
+		
 		np4.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
@@ -676,60 +651,61 @@ public class GUI extends Application {
 
 			}
 		});
+		
 		np5.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
 					stdoutArea.appendText("5");
 					racer = racer.concat("5");
 				}
-
 			}
 		});
+		
 		np6.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
 					stdoutArea.appendText("6");
 					racer = racer.concat("6");
 				}
-
 			}
 		});
+		
 		np7.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
 					stdoutArea.appendText("7");
 					racer = racer.concat("7");
 				}
-
 			}
 		});
+		
 		np8.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
 					stdoutArea.appendText("8");
 					racer = racer.concat("8");
 				}
-
 			}
 		});
+		
 		np9.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
 					stdoutArea.appendText("9");
 					racer = racer.concat("9");
 				}
-
 			}
 		});
+		
 		np0.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
 					stdoutArea.appendText("0");
 					racer = racer.concat("0");
 				}
-
 			}
 		});
+		
 		npstar.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (!Chrono.event.isEmpty()) {
@@ -740,28 +716,26 @@ public class GUI extends Application {
 						Chrono.newRun();
 					}
 				}
-
 			}
 		});
+		
 		nphash.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-                if (!Chrono.event.isEmpty()) {
-                    if(!racer.isEmpty()){
-                        if(!Chrono.out) {
-                            stdoutArea.appendText("\n");
-                            Chrono.num(Integer.parseInt(racer));
-                            racer = "";
-                        }
-                        else
-                        {
-                            Chrono.updGRPF(racer);
-                            racer = "";
-                        }
-                    }
-                }
+            		public void handle(ActionEvent event) {
+                		if (!Chrono.event.isEmpty()) {
+                    			if(!racer.isEmpty()){
+                        			if(!Chrono.out) {
+                            				stdoutArea.appendText("\n");
+                            				Chrono.num(Integer.parseInt(racer));
+                            				racer = "";
+                        			} else {
+                            				Chrono.updGRPF(racer);
+                            				racer = "";
+                        			}
+                    			}
+                		}
 
-            }
-        });
+            		}
+        	});
 		
 		printer.setOnAction(new EventHandler<ActionEvent>() {
         	    @Override
@@ -775,25 +749,23 @@ public class GUI extends Application {
 		window.setScene(OF);
 		window.show();
 	}
-	 public void reset()
-    {
-        round1.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
-                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
-        round2.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
-                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
-        round3.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
-                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
-        round4.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
-                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
-        round5.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
-                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
-        round6.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
-                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
-        round7.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
-                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
-        round8.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
-                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
-
-
-    }
+	
+	public void reset() {
+        	round1.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                	+ "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        	round2.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                	+ "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        	round3.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                	+ "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        	round4.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                	+ "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        	round5.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                	+ "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        	round6.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                	+ "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        	round7.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                	+ "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        	round8.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                	+ "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+    	}
 }
