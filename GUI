@@ -434,21 +434,45 @@ public class GUI extends Application {
 				Chrono.newRun();
 			}
 		});
-		 b1.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-                Chrono.trigChannel(1);
+		
+		swap.setOnAction(new EventHandler<ActionEvent>() {
+            		public void handle(ActionEvent event) {
 
-                Chrono.updScreen();
-            }
+                		if (Chrono.event.equalsIgnoreCase("IND")) {
+                    			if (Chrono.toFinish.size() >= 2) {
+                        			stdoutArea.appendText("You are able to swap\n");
+                        			int tmp = Chrono.toFinish.get(0).index;
+                        			Chrono.toFinish.get(0).index = Chrono.toFinish.get(1).index;
+                        			Chrono.toFinish.get(1).index = tmp;
+
+                        			Racer temp = Chrono.toFinish.removeFirst();
+                        			Chrono.toFinish.add(1, temp);
+                    			}
+                    
+                    			else {
+                        			stdoutArea.appendText("Not enough racers to swap\n");
+                    			}
+                		}
+				
+                		else {
+                    			stdoutArea.appendText("Can only use this feature in event IND\n");
+                		}
+            		}
         	});
-        b2.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-
-                Chrono.trigChannel(2);
-
-                Chrono.updScreen();
-            }
-        });
+		
+		 b1.setOnAction(new EventHandler<ActionEvent>() {
+            		public void handle(ActionEvent event) {
+                		Chrono.trigChannel(1);
+                		Chrono.updScreen();
+            		}
+        	});
+		
+        	b2.setOnAction(new EventHandler<ActionEvent>() {
+            		public void handle(ActionEvent event) {
+                		Chrono.trigChannel(2);
+                		Chrono.updScreen();
+            		}
+        	});
 
         b3.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
