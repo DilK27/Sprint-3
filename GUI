@@ -1,6 +1,9 @@
+package Sprint3;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BackgroundFill;
 import javafx.stage.Stage;
 import javafx.scene.Group;
 import javafx.scene.shape.Rectangle;
@@ -8,22 +11,19 @@ import javafx.scene.paint.Color;
 import javafx.scene.control.Label;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.StackPane;
-import javafx.event.ActionEvent;
+import javafx.scene.Scene;
+import javafx.scene.shape.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
+import javafx.event.ActionEvent;
 import javafx.scene.shape.Box;
-
+import javafx.geometry.Insets;
 
 public class GUI extends Application{
 
     Stage window;
     static ChronoTimer Chrono;
-
-    // need an array of booleans to keep track of last state and then switch between color and white
-
-    boolean[] clicked = new boolean[8];
-
 
     Scene OF;
     Scene ON;
@@ -57,7 +57,6 @@ public class GUI extends Application{
 //    Button right = new Button();
 //    Button up = new Button();
 //    Button down =  new Button();
-//
 
     Button np0 = new Button("0");
     Button np1 = new Button("1");
@@ -97,15 +96,13 @@ public class GUI extends Application{
     Box print = new Box(150,150,150);
     Box screen = new Box(250,200,200);
 
-
-
     public static void main(String[] args){
 
         launch(args);
         Chrono = new ChronoTimer();
     }
 
-    @Override
+
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
 
@@ -152,7 +149,6 @@ public class GUI extends Application{
         b7.setTranslateX(400);
         b7.setTranslateY(60);
 
-
         two.setTranslateX(257);
         two.setTranslateY(140);
         four.setTranslateX(307);
@@ -171,7 +167,6 @@ public class GUI extends Application{
         b8.setTranslateX(400);
         b8.setTranslateY(160);
 
-
         start.setTranslateX(200);
         start.setTranslateY(60);
         enable1.setTranslateX(150);
@@ -183,6 +178,8 @@ public class GUI extends Application{
 
         under.setTranslateX(210);
         under.setTranslateY(455);
+
+
 
         round1.setStyle(
                 "-fx-background-radius: 80em; " +
@@ -331,6 +328,7 @@ public class GUI extends Application{
                         "-fx-max-width: 40px; " +
                         "-fx-max-height: 40px;"
         );
+
         Larrow.setStyle( "-fx-font-size: 15px; " +
                 "-fx-min-width: 35px; " +
                 "-fx-min-height: 25px; " +
@@ -343,7 +341,7 @@ public class GUI extends Application{
                 "-fx-max-width: 35px; " +
                 "-fx-max-height: 25px;"
         );
-         Uarrow.setStyle( "-fx-font-size: 15px; " +
+        Uarrow.setStyle( "-fx-font-size: 15px; " +
                 "-fx-min-width: 30px; " +
                 "-fx-min-height: 35px; " +
                 "-fx-max-width: 30px; " +
@@ -403,10 +401,11 @@ public class GUI extends Application{
         Larrow.setTranslateY(325);
         Rarrow.setTranslateX(60);
         Rarrow.setTranslateY(325);
-        Uarrow.setTranslateX(105); 
+        Uarrow.setTranslateX(105);
         Uarrow.setTranslateY(325);
         Darrow.setTranslateX(140);
         Darrow.setTranslateY(325);
+
 
         round1.setTranslateX(257);
         round1.setTranslateY(100);
@@ -487,7 +486,7 @@ public class GUI extends Application{
         on.getChildren().add(np9);
         on.getChildren().add(npstar);
         on.getChildren().add(nphash);
-        
+
         on.getChildren().add(Larrow);
         on.getChildren().add(Rarrow);
         on.getChildren().add(Uarrow);
@@ -502,15 +501,12 @@ public class GUI extends Application{
             public void handle(ActionEvent event) {
                 Chrono.setPower();
                 window.setScene(ON);
-                ChronoTimer.reset();
             }
         });
         power2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 Chrono.setPower();
                 window.setScene(OF);
-                ChronoTimer.reset();
-
             }
         });
         function.setOnAction(new EventHandler<ActionEvent>() {
@@ -655,7 +651,6 @@ public class GUI extends Application{
                 }
             }
         });
-        
         round1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 Chrono.togChannel(1);
@@ -670,7 +665,7 @@ public class GUI extends Application{
                 }
                 else
                 {
-                    round1.setStyle("-fx-background-color: darkred; " +
+                    round1.setStyle(
                             "-fx-background-radius: 80em; " +
                             "-fx-min-width: 16px; " +
                             "-fx-min-height: 16px; " +
@@ -693,7 +688,7 @@ public class GUI extends Application{
                 }
                 else
                 {
-                    round2.setStyle("-fx-background-color: darkred; " +
+                    round2.setStyle(
                             "-fx-background-radius: 80em; " +
                             "-fx-min-width: 16px; " +
                             "-fx-min-height: 16px; " +
@@ -707,7 +702,7 @@ public class GUI extends Application{
                 Chrono.togChannel(3);
                 if(Chrono.channels[3])
                 {
-                    round3.setStyle("-fx-background-color: lawngreen; " +
+                    round3.setStyle( "-fx-background-color: lawngreen; " +
                             "-fx-background-radius: 80em; " +
                             "-fx-min-width: 16px; " +
                             "-fx-min-height: 16px; " +
@@ -716,7 +711,7 @@ public class GUI extends Application{
                 }
                 else
                 {
-                    round3.setStyle("-fx-background-color: darkred; " +
+                    round3.setStyle(
                             "-fx-background-radius: 80em; " +
                             "-fx-min-width: 16px; " +
                             "-fx-min-height: 16px; " +
@@ -739,7 +734,7 @@ public class GUI extends Application{
                 }
                 else
                 {
-                    round4.setStyle("-fx-background-color: darkred; " +
+                    round4.setStyle(
                             "-fx-background-radius: 80em; " +
                             "-fx-min-width: 16px; " +
                             "-fx-min-height: 16px; " +
@@ -762,7 +757,7 @@ public class GUI extends Application{
                 }
                 else
                 {
-                    round5.setStyle("-fx-background-color: darkred; " +
+                    round5.setStyle(
                             "-fx-background-radius: 80em; " +
                             "-fx-min-width: 16px; " +
                             "-fx-min-height: 16px; " +
@@ -785,7 +780,7 @@ public class GUI extends Application{
                 }
                 else
                 {
-                    round6.setStyle("-fx-background-color: darkred; " +
+                    round6.setStyle(
                             "-fx-background-radius: 80em; " +
                             "-fx-min-width: 16px; " +
                             "-fx-min-height: 16px; " +
@@ -808,7 +803,7 @@ public class GUI extends Application{
                 }
                 else
                 {
-                    round7.setStyle("-fx-background-color: darkred; " +
+                    round7.setStyle(
                             "-fx-background-radius: 80em; " +
                             "-fx-min-width: 16px; " +
                             "-fx-min-height: 16px; " +
@@ -831,7 +826,7 @@ public class GUI extends Application{
                 }
                 else
                 {
-                    round8.setStyle("-fx-background-color: darkred; " +
+                    round8.setStyle(
                             "-fx-background-radius: 80em; " +
                             "-fx-min-width: 16px; " +
                             "-fx-min-height: 16px; " +
@@ -842,10 +837,10 @@ public class GUI extends Application{
         });
 
 
-
         OF = new Scene (off ,700, 500);
         ON = new Scene(on, 700,500);
         window.setScene(OF);
         window .show();
     }
 }
+
