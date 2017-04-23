@@ -731,6 +731,13 @@ public class GUI extends Application {
 
 			}
 		});
+		
+		printer.setOnAction(new EventHandler<ActionEvent>() {
+        	    @Override
+        	    public void handle(ActionEvent event) {
+        	        ChronoTimer.printlists();
+        	    }
+        	});
 
 		OF = new Scene(off, 700, 500);
 		ON = new Scene(on, 700, 500);
