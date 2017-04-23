@@ -255,13 +255,13 @@ public class GUI extends Application {
 		nphash.setStyle(
 				"-fx-min-width: 40px; " + "-fx-min-height: 40px; " + "-fx-max-width: 40px; " + "-fx-max-height: 40px;");
 
-		Larrow.setStyle("-fx-font-size: 15px; " + "-fx-min-width: 35px; " + "-fx-min-height: 25px; "
+		Larrow.setStyle("-fx-font-size: 13px; " + "-fx-min-width: 35px; " + "-fx-min-height: 25px; "
 				+ "-fx-max-width: 35px; " + "-fx-max-height: 25px;");
-		Rarrow.setStyle("-fx-font-size: 15px; " + "-fx-min-width: 35px; " + "-fx-min-height: 25px; "
+		Rarrow.setStyle("-fx-font-size: 13px; " + "-fx-min-width: 35px; " + "-fx-min-height: 25px; "
 				+ "-fx-max-width: 35px; " + "-fx-max-height: 25px;");
-		Uarrow.setStyle("-fx-font-size: 15px; " + "-fx-min-width: 30px; " + "-fx-min-height: 35px; "
+		Uarrow.setStyle("-fx-font-size: 13px; " + "-fx-min-width: 30px; " + "-fx-min-height: 35px; "
 				+ "-fx-max-width: 30px; " + "-fx-max-height: 35px;");
-		Darrow.setStyle("-fx-font-size: 15px; " + "-fx-min-width: 30px; " + "-fx-min-height: 35px; "
+		Darrow.setStyle("-fx-font-size: 13px; " + "-fx-min-width: 30px; " + "-fx-min-height: 35px; "
 				+ "-fx-max-width: 30px; " + "-fx-max-height: 35px;");
 
 		// screen.setStyle(
