@@ -485,7 +485,7 @@ public class GUI extends Application {
 
         b4.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                b4.setStyle("-fx-background-color: red");
+                
 
                 Chrono.trigChannel(4);
 
