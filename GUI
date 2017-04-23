@@ -462,12 +462,15 @@ public class GUI extends Application{
             public void handle(ActionEvent event) {
                 Chrono.setPower();
                 window.setScene(ON);
+                ChronoTimer.reset();
             }
         });
         power2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 Chrono.setPower();
                 window.setScene(OF);
+                ChronoTimer.reset();
+
             }
         });
         function.setOnAction(new EventHandler<ActionEvent>() {
@@ -478,24 +481,50 @@ public class GUI extends Application{
         });
         b1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                b1.setStyle("-fx-background-color: lawngreen");
-
                 Chrono.trigChannel(1);
+
+                if(Chrono.channels[1]){
+                    b1.setStyle("-fx-background-color: lawngreen");
+                }
+                else{
+                    b1.setStyle(" -fx-min-width: 25x; " +
+                            "-fx-min-height: 26px; " +
+                            "-fx-max-width: 25px; " +
+                            "-fx-max-height: 26px;");
+                }
             }
         });
         b2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                b2.setStyle("-fx-background-color: red");
 
                 Chrono.trigChannel(2);
+
+                if(Chrono.channels[2]){
+                    b2.setStyle("-fx-background-color: red");
+                }
+                else{
+                    b2.setStyle(" -fx-min-width: 25x; " +
+                            "-fx-min-height: 26px; " +
+                            "-fx-max-width: 25px; " +
+                            "-fx-max-height: 26px;");
+                }
             }
         });
 
         b3.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                b3.setStyle("-fx-background-color: lawngreen");
 
                 Chrono.trigChannel(3);
+
+                if(Chrono.channels[3]){
+                    b3.setStyle("-fx-background-color: lawngreen");
+                }
+                else{
+                    b3.setStyle(" -fx-min-width: 25x; " +
+                            "-fx-min-height: 26px; " +
+                            "-fx-max-width: 25px; " +
+                            "-fx-max-height: 26px;");
+                }
             }
         });
 
@@ -504,41 +533,89 @@ public class GUI extends Application{
                 b4.setStyle("-fx-background-color: red");
 
                 Chrono.trigChannel(4);
+
+                if(Chrono.channels[4]){
+                    b4.setStyle("-fx-background-color: red");
+                }
+                else{
+                    b4.setStyle(" -fx-min-width: 25x; " +
+                            "-fx-min-height: 26px; " +
+                            "-fx-max-width: 25px; " +
+                            "-fx-max-height: 26px;");
+                }
             }
         });
 
         b5.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                b5.setStyle("-fx-background-color: lawngreen");
 
                 Chrono.trigChannel(5);
+
+                if(Chrono.channels[5]){
+                    b5.setStyle("-fx-background-color: lawngreen");
+                }
+                else{
+                    b5.setStyle(" -fx-min-width: 25x; " +
+                            "-fx-min-height: 26px; " +
+                            "-fx-max-width: 25px; " +
+                            "-fx-max-height: 26px;");
+                }
             }
         });
 
         b6.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                b6.setStyle("-fx-background-color: red");
 
                 Chrono.trigChannel(6);
+
+                if(Chrono.channels[6]){
+                    b6.setStyle("-fx-background-color: red");
+                }
+                else{
+                    b6.setStyle(" -fx-min-width: 25x; " +
+                            "-fx-min-height: 26px; " +
+                            "-fx-max-width: 25px; " +
+                            "-fx-max-height: 26px;");
+                }
+
             }
         });
 
         b7.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                b7.setStyle("-fx-background-color: lawngreen");
 
                 Chrono.trigChannel(7);
+
+                if(Chrono.channels[7]){
+                    b7.setStyle("-fx-background-color: lawngreen");
+                }
+                else{
+                    b7.setStyle(" -fx-min-width: 25x; " +
+                            "-fx-min-height: 26px; " +
+                            "-fx-max-width: 25px; " +
+                            "-fx-max-height: 26px;");
+                }
+
+
             }
         });
 
         b8.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                b8.setStyle("-fx-background-color: red");
-
                 Chrono.trigChannel(8);
+
+                if(Chrono.channels[8]){
+                    b8.setStyle("-fx-background-color: red");
+                }
+                else{
+                    b8.setStyle(" -fx-min-width: 25x; " +
+                            "-fx-min-height: 26px; " +
+                            "-fx-max-width: 25px; " +
+                            "-fx-max-height: 26px;");
+                }
             }
         });
-
+        
         round1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 Chrono.togChannel(1);
