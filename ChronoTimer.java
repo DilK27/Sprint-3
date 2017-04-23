@@ -23,10 +23,10 @@ public class ChronoTimer {
 	// the final order of the racers
 	static String GRPF[];
 	// time
-	static Clock time;
+	static Clock time = Clock.systemUTC();
 	static LocalTime time2;
-	static double start;
-	static Time stopWatch;
+	static double start = time.millis();
+	static Time stopWatch = new Time();
 	static String input;
 	static String[] splitted;
 
