@@ -628,4 +628,16 @@ public class ChronoTimer {
 		}
 		System.out.println("times updated.");
 	}
+	 static void updScreen()
+    {
+        GUI.resultArea.clear();
+        GUI.resultArea.appendText("to race:\n");
+        for(int i = 0; i < racers.size(); ++i){
+            GUI.resultArea.appendText(String.valueOf(racers.get(i).racerNum));
+        }
+        GUI.resultArea.appendText("");
+        for(int i = 0 ; i < completed.size(); ++i){
+            GUI.resultArea.appendText(String.valueOf(completed.get(i).racerNum) + stopWatch.formatTime(completed.get(i).fin - completed.get(i).start));
+        }
+    }
 }
