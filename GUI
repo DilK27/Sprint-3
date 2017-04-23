@@ -434,133 +434,77 @@ public class GUI extends Application {
 				Chrono.newRun();
 			}
 		});
-		b1.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				Chrono.trigChannel(1);
+		 b1.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.trigChannel(1);
 
-				if (Chrono.channels[1]) {
-					b1.setStyle("-fx-background-color: lawngreen");
-				} else {
-					b1.setStyle(" -fx-min-width: 25px; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
-							+ "-fx-max-height: 26px;");
-				}
-				
-				Chrono.updScreen();
-			}
-		});
-		b2.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
+                Chrono.updScreen();
+            }
+        	});
+        b2.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
 
-				Chrono.trigChannel(2);
+                Chrono.trigChannel(2);
 
-				if (Chrono.channels[2]) {
-					b2.setStyle("-fx-background-color: red");
-				} else {
-					b2.setStyle(" -fx-min-width: 25px; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
-							+ "-fx-max-height: 26px;");
-				}
-				
-				Chrono.updScreen();
-			}
-		});
+                Chrono.updScreen();
+            }
+        });
 
-		b3.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
+        b3.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
 
-				Chrono.trigChannel(3);
+                Chrono.trigChannel(3);
 
-				if (Chrono.channels[3]) {
-					b3.setStyle("-fx-background-color: lawngreen");
-				} else {
-					b3.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
-							+ "-fx-max-height: 26px;");
-				}
-				
-				Chrono.updScreen();
-			}
-		});
+                Chrono.updScreen();
+            }
+        });
 
-		b4.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				b4.setStyle("-fx-background-color: red");
+        b4.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                b4.setStyle("-fx-background-color: red");
 
-				Chrono.trigChannel(4);
+                Chrono.trigChannel(4);
 
-				if (Chrono.channels[4]) {
-					b4.setStyle("-fx-background-color: red");
-				} else {
-					b4.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
-							+ "-fx-max-height: 26px;");
-				}
-				
-				Chrono.updScreen();
-			}
-		});
+                Chrono.updScreen();
+            }
+        });
 
-		b5.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
+        b5.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
 
-				Chrono.trigChannel(5);
+                Chrono.trigChannel(5);
 
-				if (Chrono.channels[5]) {
-					b5.setStyle("-fx-background-color: lawngreen");
-				} else {
-					b5.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
-							+ "-fx-max-height: 26px;");
-				}
-				
-				Chrono.updScreen();
-			}
-		});
+                Chrono.updScreen();
+            }
+        });
 
-		b6.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
+        b6.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
 
-				Chrono.trigChannel(6);
+                Chrono.trigChannel(6);
 
-				if (Chrono.channels[6]) {
-					b6.setStyle("-fx-background-color: red");
-				} else {
-					b6.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
-							+ "-fx-max-height: 26px;");
-				}
-				
-				Chrono.updScreen();
+                Chrono.updScreen();
 
-			}
-		});
+            }
+        });
 
-		b7.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
+        b7.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
 
-				Chrono.trigChannel(7);
+                Chrono.trigChannel(7);
 
-				if (Chrono.channels[7]) {
-					b7.setStyle("-fx-background-color: lawngreen");
-				} else {
-					b7.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
-							+ "-fx-max-height: 26px;");
-				}
-				
-				Chrono.updScreen();
+                Chrono.updScreen();
 
-			}
-		});
+            }
+        });
 
-		b8.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				Chrono.trigChannel(8);
+        b8.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Chrono.trigChannel(8);
 
-				if (Chrono.channels[8]) {
-					b8.setStyle("-fx-background-color: red");
-				} else {
-					b8.setStyle(" -fx-min-width: 25x; " + "-fx-min-height: 26px; " + "-fx-max-width: 25px; "
-							+ "-fx-max-height: 26px;");
-				}
-				
-				Chrono.updScreen();
-			}
-		});
+                Chrono.updScreen();
+            }
+        });
 		round1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				Chrono.togChannel(1);
@@ -767,6 +711,7 @@ public class GUI extends Application {
 				if (!Chrono.event.isEmpty()) {
 					if (Chrono.run) {
 						Chrono.endrun();
+						reset();
 					} else {
 						Chrono.newRun();
 					}
@@ -792,4 +737,25 @@ public class GUI extends Application {
 		window.setScene(OF);
 		window.show();
 	}
+	 public void reset()
+    {
+        round1.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        round2.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        round3.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        round4.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        round5.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        round6.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        round7.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+        round8.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
+
+
+    }
 }
