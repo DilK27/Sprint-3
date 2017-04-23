@@ -239,8 +239,8 @@ public class ChronoTimer {
 				} else if (input.equalsIgnoreCase("GRP")) {
 					event = input;
 
-					GUI.stdoutArea.appendText("Group Race Selected");
-					GUI.stdoutArea.appendText("Press * to start a new run");
+					GUI.stdoutArea.appendText("Group Race Selected\n");
+					GUI.stdoutArea.appendText("Press * to start a new run\n");
 
 					System.out.println("group of competitors Race has been Selected\n");
 					System.out.println("for GRP use Trig 1 to begin race, and Trig 2 to end racers 1 at a time. \n"
