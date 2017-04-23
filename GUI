@@ -403,9 +403,9 @@ public class GUI extends Application{
         Larrow.setTranslateY(325);
         Rarrow.setTranslateX(60);
         Rarrow.setTranslateY(325);
-        Uarrow.setTranslateX(140); 
+        Uarrow.setTranslateX(105); 
         Uarrow.setTranslateY(325);
-        Darrow.setTranslateX(105);
+        Darrow.setTranslateX(140);
         Darrow.setTranslateY(325);
 
         round1.setTranslateX(257);
