@@ -655,6 +655,5 @@ public class ChronoTimer {
        		 GUI.resultArea.appendText(String.valueOf(completed.get(i).racerNum)
                 		+ "  " + stopWatch.formatTime(completed.get(i).fin - completed.get(i).start) + "\n");
     	}
-	}
     }
 }
