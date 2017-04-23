@@ -266,7 +266,7 @@ public class ChronoTimer {
 		power = !power;
 
 		if (power == true) {
-
+			GUI.stdoutArea.appendText("The power is on\n");
 			System.out.println("\nThe power is on\n");
 		}
 
