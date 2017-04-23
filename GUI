@@ -1,15 +1,32 @@
-package Sprint3;
+
+
+
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.awt.Font;
+import java.io.Console;
+import java.io.PrintStream;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.BackgroundFill;
 import javafx.stage.Stage;
 import javafx.scene.Group;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.scene.paint.Color;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextAreaBuilder;
 import javafx.event.EventHandler;
+import javafx.scene.layout.VBox;
 import javafx.scene.control.TextField;
 import javafx.scene.Scene;
 import javafx.scene.shape.*;
@@ -104,9 +121,14 @@ public class GUI extends Application{
 
 
     public void start(Stage primaryStage) throws Exception {
+    	
+    	
+    	
         window = primaryStage;
 
         window.setTitle("ChronoTimer");
+        
+        
 
         //power1.setOnAction(e -> window.setScene(ON));
         power1.setTranslateX(10);
@@ -428,6 +450,20 @@ public class GUI extends Application{
 
         Group off = new Group();
         Group on = new Group();
+        
+        TextArea resultArea = new TextArea();
+        resultArea.setTranslateX(200);
+        resultArea.setTranslateY(250);
+        resultArea.setPrefColumnCount(15);
+        resultArea.setPrefRowCount(10);
+        
+        TextArea stdoutArea = new TextArea();
+        stdoutArea.setTranslateX(475);
+        stdoutArea.setTranslateY(50);
+        stdoutArea.setPrefColumnCount(15);
+        stdoutArea.setPrefRowCount(10);
+        
+        
         Rectangle rect = new Rectangle(700, 500, Color.BLACK);
         off.getChildren().add(rect);
         off.getChildren().add(power1);
@@ -435,6 +471,9 @@ public class GUI extends Application{
 
         Rectangle rekt = new Rectangle(700, 500, Color.LAVENDER );
         on.getChildren().add(rekt);
+        
+        on.getChildren().add(stdoutArea);
+        on.getChildren().add(resultArea);
         on.getChildren().add(power2);
         on.getChildren().add(function);
         on.getChildren().add(swap);
@@ -492,8 +531,8 @@ public class GUI extends Application{
         on.getChildren().add(Uarrow);
         on.getChildren().add(Darrow);
 
-        on.getChildren().add(screen);
-        on.getChildren().add(print);
+        //on.getChildren().add(screen);
+        //on.getChildren().add(print);
 
         on.getChildren().add(under);
 
@@ -523,7 +562,7 @@ public class GUI extends Application{
                     b1.setStyle("-fx-background-color: lawngreen");
                 }
                 else{
-                    b1.setStyle(" -fx-min-width: 25x; " +
+                    b1.setStyle(" -fx-min-width: 25px; " +
                             "-fx-min-height: 26px; " +
                             "-fx-max-width: 25px; " +
                             "-fx-max-height: 26px;");
@@ -539,7 +578,7 @@ public class GUI extends Application{
                     b2.setStyle("-fx-background-color: red");
                 }
                 else{
-                    b2.setStyle(" -fx-min-width: 25x; " +
+                    b2.setStyle(" -fx-min-width: 25px; " +
                             "-fx-min-height: 26px; " +
                             "-fx-max-width: 25px; " +
                             "-fx-max-height: 26px;");
