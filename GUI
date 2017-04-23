@@ -552,7 +552,7 @@ public class GUI extends Application{
         function.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 Chrono.event("grp");
-                Chrono.newRun();
+                
             }
         });
          npstar.setOnAction(new EventHandler<ActionEvent>() {
