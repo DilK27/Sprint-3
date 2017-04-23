@@ -279,7 +279,7 @@ public class ChronoTimer {
 	static void setPower() {
 
 		power = !power;
-
+		reset();
 		if (power == true) {
 
 			GUI.stdoutArea.appendText("The power is on\n");
