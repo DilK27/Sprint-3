@@ -132,6 +132,7 @@ public class GUI extends Application {
     Label finish = new Label("Finish");
     Label enable2 = new Label("Enable/Disable");
     Label under = new Label("Queue / Running / Final Time");
+    Label chan = new Label("CHAN");
     Line line1 = new Line(0, 500, 700, 500);
 
     Box print = new Box(150, 150, 150);
@@ -181,13 +182,13 @@ public class GUI extends Application {
         seven.setTranslateX(407);
         seven.setTranslateY(40);
 
-        oneC.setTranslateX(23);
+        oneC.setTranslateX(63);
         oneC.setTranslateY(508);
-        threeC.setTranslateX(63);
+        threeC.setTranslateX(103);
         threeC.setTranslateY(508);
-        fiveC.setTranslateX(103);
+        fiveC.setTranslateX(143);
         fiveC.setTranslateY(508);
-        sevenC.setTranslateX(143);
+        sevenC.setTranslateX(183);
         sevenC.setTranslateY(508);
 
         b1.setTranslateX(250);
@@ -208,13 +209,13 @@ public class GUI extends Application {
         eight.setTranslateX(407);
         eight.setTranslateY(140);
 
-        twoC.setTranslateX(23);
+        twoC.setTranslateX(63);
         twoC.setTranslateY(545);
-        fourC.setTranslateX(63);
+        fourC.setTranslateX(103);
         fourC.setTranslateY(545);
-        sixC.setTranslateX(103);
+        sixC.setTranslateX(143);
         sixC.setTranslateY(545);
-        eightC.setTranslateX(143);
+        eightC.setTranslateX(183);
         eightC.setTranslateY(545);
 
         b2.setTranslateX(250);
@@ -389,22 +390,25 @@ public class GUI extends Application {
         round8.setTranslateX(407);
         round8.setTranslateY(200);
 
-        round1C.setTranslateX(20);
+        round1C.setTranslateX(60);
         round1C.setTranslateY(525);
-        round3C.setTranslateX(60);
+        round3C.setTranslateX(100);
         round3C.setTranslateY(525);
-        round5C.setTranslateX(100);
+        round5C.setTranslateX(140);
         round5C.setTranslateY(525);
-        round7C.setTranslateX(140);
+        round7C.setTranslateX(180);
         round7C.setTranslateY(525);
 
-        round2C.setTranslateX(20);
+        chan.setTranslateX(10);
+        chan.setTranslateY(515);
+        
+        round2C.setTranslateX(60);
         round2C.setTranslateY(563);
-        round4C.setTranslateX(60);
+        round4C.setTranslateX(100);
         round4C.setTranslateY(563);
-        round6C.setTranslateX(100);
+        round6C.setTranslateX(140);
         round6C.setTranslateY(563);
-        round8C.setTranslateX(140);
+        round8C.setTranslateX(180);
         round8C.setTranslateY(563);
 
         Group off = new Group();
@@ -476,6 +480,7 @@ public class GUI extends Application {
         on.getChildren().add(round6);
         on.getChildren().add(round7);
         on.getChildren().add(round8);
+        on.getChildren().add(chan);
 
         on.getChildren().add(round1C);
         on.getChildren().add(round2C);
