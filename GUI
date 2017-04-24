@@ -1,9 +1,10 @@
-
 import javafx.application.Application;
 import java.util.List;
 import java.util.ArrayList;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
+
+
 
 import javafx.scene.Scene;
 import javafx.scene.Group;
@@ -57,13 +58,6 @@ public class GUI extends Application {
     Button function;
     Button swap;
     Button printer;
-    ObservableList<String> options =
-            FXCollections.observableArrayList(
-                    "Option 1",
-                    "Option 2",
-                    "Option 3"
-            );
-    final ComboBox comboBox = new ComboBox(options);
 
     Button b1 = new Button("   ");
     Button b2 = new Button("   ");
@@ -137,6 +131,16 @@ public class GUI extends Application {
 
     Box print = new Box(150, 150, 150);
     Box screen = new Box(250, 200, 200);
+
+    ObservableList<String> options =
+            FXCollections.observableArrayList(
+                    "Gate",
+                    "Eye",
+                    "Pad"
+            );
+    final ComboBox comboBox = new ComboBox(options);
+
+
 
     public static void main(String[] args) {
 
@@ -401,7 +405,7 @@ public class GUI extends Application {
 
         chan.setTranslateX(10);
         chan.setTranslateY(515);
-        
+
         round2C.setTranslateX(60);
         round2C.setTranslateY(563);
         round4C.setTranslateX(100);
@@ -423,6 +427,9 @@ public class GUI extends Application {
         stdoutArea.setTranslateY(50);
         stdoutArea.setPrefColumnCount(15);
         stdoutArea.setPrefRowCount(10);
+
+        comboBox.setTranslateX(230);
+        comboBox.setTranslateY(520);
 
         Rectangle rect = new Rectangle(700, 500, Color.BLACK);
         off.getChildren().add(rect);
@@ -490,6 +497,8 @@ public class GUI extends Application {
         on.getChildren().add(round6C);
         on.getChildren().add(round7C);
         on.getChildren().add(round8C);
+
+        on.getChildren().add(comboBox);
 
         on.getChildren().add(np0);
         on.getChildren().add(np1);
@@ -860,6 +869,13 @@ public class GUI extends Application {
             @Override
             public void handle(ActionEvent event) {
                 ChronoTimer.printlists();
+            }
+        });
+
+        round1C.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                comboBox.isPressed();
             }
         });
 
