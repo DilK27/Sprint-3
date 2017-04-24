@@ -76,14 +76,16 @@ public class GUI extends Application {
     Button round6 = new Button();
     Button round7 = new Button();
     Button round8 = new Button();
-    Button round1C = new Button();
-    Button round2C = new Button();
-    Button round3C = new Button();
-    Button round4C = new Button();
-    Button round5C = new Button();
-    Button round6C = new Button();
-    Button round7C = new Button();
-    Button round8C = new Button();
+//    Button round1C = new Button();
+//    Button round2C = new Button();
+//    Button round3C = new Button();
+//    Button round4C = new Button();
+//    Button round5C = new Button();
+//    Button round6C = new Button();
+//    Button round7C = new Button();
+//    Button round8C = new Button();
+    Button usb = new Button();
+
 
     Button np0 = new Button("0");
     Button np1 = new Button("1");
@@ -127,18 +129,14 @@ public class GUI extends Application {
     Label enable2 = new Label("Enable/Disable");
     Label under = new Label("Queue / Running / Final Time");
     Label chan = new Label("CHAN");
+    Label port = new Label("USB PORT");
+
     Line line1 = new Line(0, 500, 700, 500);
+
 
     Box print = new Box(150, 150, 150);
     Box screen = new Box(250, 200, 200);
 
-    ObservableList<String> options =
-            FXCollections.observableArrayList(
-                    "Gate",
-                    "Eye",
-                    "Pad"
-            );
-    final ComboBox comboBox = new ComboBox(options);
 
 
 
@@ -153,6 +151,43 @@ public class GUI extends Application {
         window = primaryStage;
 
         window.setTitle("ChronoTimer");
+
+        ComboBox round1C = new ComboBox<String>(FXCollections.observableArrayList("Gate", "Eye", "Pad"));
+        round1C.getSelectionModel().select(0);
+        round1C.setId("changed");
+
+        ComboBox round2C = new ComboBox<String>(FXCollections.observableArrayList("Gate", "Eye", "Pad"));
+        round2C.getSelectionModel().select(0);
+        round2C.setId("changed");
+
+        ComboBox round3C = new ComboBox<String>(FXCollections.observableArrayList("Gate", "Eye", "Pad"));
+        round3C.getSelectionModel().select(0);
+        round3C.setId("changed");
+
+        ComboBox round4C = new ComboBox<String>(FXCollections.observableArrayList("Gate", "Eye", "Pad"));
+        round4C.getSelectionModel().select(0);
+        round4C.setId("changed");
+
+        ComboBox round5C = new ComboBox<String>(FXCollections.observableArrayList("Gate", "Eye", "Pad"));
+        round5C.getSelectionModel().select(0);
+        round5C.setId("changed");
+
+        ComboBox round6C = new ComboBox<String>(FXCollections.observableArrayList("Gate", "Eye", "Pad"));
+        round6C.getSelectionModel().select(0);
+        round6C.setId("changed");
+
+        ComboBox round7C = new ComboBox<String>(FXCollections.observableArrayList("Gate", "Eye", "Pad"));
+        round7C.getSelectionModel().select(0);
+        round7C.setId("changed");
+
+        ComboBox round8C = new ComboBox<String>(FXCollections.observableArrayList("Gate", "Eye", "Pad"));
+        round8C.getSelectionModel().select(0);
+        round8C.setId("changed");
+
+//        ComboBox normalCombobox = new ComboBox<String>(FXCollections.observableArrayList("Gate", "Eye", "Pad"));
+//        normalCombobox.getSelectionModel().select(0);
+
+
 
         // power1.setOnAction(e -> window.setScene(ON));
         power1.setTranslateX(10);
@@ -242,6 +277,9 @@ public class GUI extends Application {
 
         under.setTranslateX(210);
         under.setTranslateY(455);
+
+//        combobox.setStyle("fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
+//                + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
 
         round1.setStyle("-fx-background-radius: 80em; " + "-fx-min-width: 16px; " + "-fx-min-height: 16px; "
                 + "-fx-max-width: 16px; " + "-fx-max-height: 16px;");
@@ -335,12 +373,21 @@ public class GUI extends Application {
                 + "-fx-max-width: 30px; " + "-fx-max-height: 35px;");
         Darrow.setStyle("-fx-font-size: 13px; " + "-fx-min-width: 30px; " + "-fx-min-height: 35px; "
                 + "-fx-max-width: 30px; " + "-fx-max-height: 35px;");
+        usb.setStyle("-fx-min-width: 75px; " + "-fx-min-height: 20px; " + "-fx-max-width: 75px; "
+                + "-fx-max-height: 20px;");
+
 
         screen.setTranslateX(300);
         screen.setTranslateY(350);
 
         print.setTranslateX(600);
         print.setTranslateY(125);
+
+        usb.setTranslateX(100);
+        usb.setTranslateY(600);
+
+        port.setTranslateX(100);
+        port.setTranslateY(600);
 
         np1.setTranslateX(520);
         np1.setTranslateY(300);
@@ -406,6 +453,13 @@ public class GUI extends Application {
         chan.setTranslateX(10);
         chan.setTranslateY(515);
 
+        usb.setTranslateX(400);
+        usb.setTranslateY(530);
+
+        port.setTranslateX(480);
+        port.setTranslateY(530);
+
+
         round2C.setTranslateX(60);
         round2C.setTranslateY(563);
         round4C.setTranslateX(100);
@@ -428,8 +482,7 @@ public class GUI extends Application {
         stdoutArea.setPrefColumnCount(15);
         stdoutArea.setPrefRowCount(10);
 
-        comboBox.setTranslateX(230);
-        comboBox.setTranslateY(520);
+
 
         Rectangle rect = new Rectangle(700, 500, Color.BLACK);
         off.getChildren().add(rect);
@@ -498,7 +551,6 @@ public class GUI extends Application {
         on.getChildren().add(round7C);
         on.getChildren().add(round8C);
 
-        on.getChildren().add(comboBox);
 
         on.getChildren().add(np0);
         on.getChildren().add(np1);
@@ -520,6 +572,9 @@ public class GUI extends Application {
 
         on.getChildren().add(under);
         on.getChildren().add(line1);
+
+        on.getChildren().add(usb);
+        on.getChildren().add(port);
 
         power1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
@@ -872,12 +927,12 @@ public class GUI extends Application {
             }
         });
 
-        round1C.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                comboBox.isPressed();
-            }
-        });
+//        round1C.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                comboBox.isPressed();
+//            }
+//        });
 
         OF = new Scene(off, 700, 500);
         ON = new Scene(on, 700, 600);
